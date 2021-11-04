@@ -18,3 +18,12 @@ B站：Pandas自动化办公，代码仓库
 - 👉资料1：[Pandas官方文档中文版PDF下载](https://mp.weixin.qq.com/s/2XS2sLFFG3INEHj9uy2WZQ)
 - 下载地址：[点我直达](https://gitee.com/zhaofeng092/PandasAutoOffice/tree/main/Pandas%E4%B8%AD%E6%96%87%E6%96%87%E6%A1%A3)
 
+
+
+
+
+有任何问题，请加入Python学习群，和我交流~
+
+❤[交流群](https://mp.weixin.qq.com/s/CadAaJUTUlXmTxJAjFUfPQ)
+
+如果内容对您有帮助，欢迎赞赏👉[赞赏码](https://gitee.com/zhaofeng092/python_auto_office/blob/master/%E8%B4%A6%E5%8F%B7%E5%85%B1%E7%94%A8%E8%B5%84%E6%BA%90/image/%E5%BE%AE%E4%BF%A1%E6%94%B6%E6%AC%BE%E7%A0%81.jpg)
