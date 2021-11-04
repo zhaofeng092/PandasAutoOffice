@@ -37,4 +37,6 @@ B站：Pandas自动化办公，代码仓库
 
 ❤[交流群](https://mp.weixin.qq.com/s/CadAaJUTUlXmTxJAjFUfPQ)
 
-如果内容对您有帮助，欢迎赞赏👉[赞赏码](https://gitee.com/zhaofeng092/python_auto_office/blob/master/%E8%B4%A6%E5%8F%B7%E5%85%B1%E7%94%A8%E8%B5%84%E6%BA%90/image/%E5%BE%AE%E4%BF%A1%E6%94%B6%E6%AC%BE%E7%A0%81.jpg)
+如果内容对您有帮助，加我好友深入沟通，我的微信：hdylw1024
+
+👉[赞赏码](https://gitee.com/zhaofeng092/python_auto_office/blob/master/%E8%B4%A6%E5%8F%B7%E5%85%B1%E7%94%A8%E8%B5%84%E6%BA%90/image/%E5%BE%AE%E4%BF%A1%E6%94%B6%E6%AC%BE%E7%A0%81.jpg)
