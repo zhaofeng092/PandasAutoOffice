@@ -15,5 +15,6 @@ B站：Pandas自动化办公，代码仓库
 
 
 
-- 资料1：panda中文文档
+- 资料1：[Pandas官方文档中文版PDF下载](https://mp.weixin.qq.com/s/2XS2sLFFG3INEHj9uy2WZQ)
 - 下载地址：[点我直达](https://gitee.com/zhaofeng092/PandasAutoOffice/tree/main/Pandas%E4%B8%AD%E6%96%87%E6%96%87%E6%A1%A3)
+
