@@ -13,3 +13,7 @@ B站：Pandas自动化办公，代码仓库
 - 课程2：[Python自动化办公--Pandas玩转Excel（全30集）](https://www.bilibili.com/video/BV1hk4y1C73S)
 - 配套代码：[点我直达](https://gitee.com/zhaofeng092/PandasAutoOffice/tree/main/Python%E8%87%AA%E5%8A%A8%E5%8C%96%E5%8A%9E%E5%85%AC--Pandas%E7%8E%A9%E8%BD%ACExcel%EF%BC%88%E5%85%A830%E9%9B%86%EF%BC%89)
 
+
+
+- 资料1：panda中文文档
+- 下载地址：[点我直达](https://gitee.com/zhaofeng092/PandasAutoOffice/tree/main/Pandas%E4%B8%AD%E6%96%87%E6%96%87%E6%A1%A3)
