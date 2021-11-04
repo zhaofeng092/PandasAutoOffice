@@ -20,6 +20,17 @@ B站：Pandas自动化办公，代码仓库
 
 
 
+- 👉课程3：[内幕 | 报价上万的大屏数据可视化，成本只有10分钟？（附全套代码）](https://www.bilibili.com/video/BV1Kz4y1r76w)
+- 代码下载：[点我](https://gitee.com/zhaofeng092/library/blob/main/java-library/%E5%85%B3%E9%94%AE%E8%AF%8D/%E5%8F%AF%E8%A7%86%E5%8C%96%E6%A8%A1%E6%9D%BF.md)
+
+
+
+- 👉课程4：[Python自动化办公（可能是B站内容最全的！有源代码 ，适合小白）](https://www.bilibili.com/video/BV1y54y1i78U)
+
+- 全套代码：[传送门](https://mp.weixin.qq.com/s/XXi1XrQov9U7JFlAZBwDkw)
+
+
+
 
 
 有任何问题，请加入Python学习群，和我交流~
