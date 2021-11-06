@@ -31,7 +31,7 @@ B站：Pandas自动化办公，代码仓库
 
 
 - 👉课程5：[三大金融工具特训班——Wind、Excel、Python(完结)](https://www.bilibili.com/video/BV16U4y1g7mS)
-- 全套代码：
+- 全套代码：[点我直达](https://gitee.com/zhaofeng092/PandasAutoOffice/blob/main/%E4%B8%89%E5%A4%A7%E9%87%91%E8%9E%8D%E5%B7%A5%E5%85%B7%E7%89%B9%E8%AE%AD%E7%8F%AD%E2%80%94%E2%80%94Wind%E3%80%81Excel%E3%80%81Python(%E5%AE%8C%E7%BB%93)/%E4%B8%89%E5%A4%A7%E9%87%91%E8%9E%8D%E5%B7%A5%E5%85%B7%E7%89%B9%E8%AE%AD%E7%8F%AD%E2%80%94%E2%80%94Wind%E3%80%81Excel%E3%80%81Python(%E5%AE%8C%E7%BB%93).md)
 
 
 
