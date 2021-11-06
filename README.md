@@ -1,4 +1,13 @@
 # PandasAutoOffice
+
+<div align="center">
+    <a href="https://github.com/zhaofeng092/python_auto_office"> <img src="https://badgen.net/badge/Github/%E7%A8%8B%E5%BA%8F%E5%91%98?icon=github&color=red"></a>
+    <a href="http://t.cn/A6Gkrbzw"> <img src="https://badgen.net/badge/follow/%E5%85%AC%E4%BC%97%E5%8F%B7?icon=rss&color=green"></a>
+    <a href="https://space.bilibili.com/259649365"> <img src="https://badgen.net/badge/pick/B%E7%AB%99?icon=dependabot&color=blue"></a>
+    <a href="https://mp.weixin.qq.com/mp/appmsgalbum?__biz=MzkyMzIwOTgzMA==&action=getalbum&album_id=1861970403066249218&scene=173&from_msgid=2247484814&from_itemidx=1&count=3&nolastread=1#wechat_redirect"> <img src="https://badgen.net/badge/join/%E4%BA%A4%E6%B5%81%E7%BE%A4?icon=atom&color=yellow"></a>
+</div>
+
+
 B站：Pandas自动化办公，代码仓库
 
 以下包含社区所有代码资源，请点击对应的课程，领取你要的代码~
@@ -39,7 +48,7 @@ B站：Pandas自动化办公，代码仓库
 
 有任何问题，请加入Python学习群，和我交流~
 
-❤[交流群](https://mp.weixin.qq.com/s/CadAaJUTUlXmTxJAjFUfPQ)
+❤[交流群](https://mp.weixin.qq.com/s/wx-JkgOUoJhb-7ZESxl93w)
 
 如果内容对您有帮助，加我好友深入沟通，我的微信：hdylw1024
 
