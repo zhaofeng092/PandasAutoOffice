@@ -10,7 +10,7 @@
 
 你好，这里是[B站账号：Pandas自动化办公](https://space.bilibili.com/1001504818)的代码仓库
 
-我是[法学院毕业的程序员兆锋](https://mp.weixin.qq.com/mp/appmsgalbum?__biz=MzkyMzIwOTgzMA==&action=getalbum&album_id=1861970403066249218&scene=173&from_msgid=2247484814&from_itemidx=1&count=3&nolastread=1#wechat_redirect)，
+我是[法学院毕业的程序员兆锋（点击查看周记）](https://mp.weixin.qq.com/mp/appmsgalbum?__biz=MzkyMzIwOTgzMA==&action=getalbum&album_id=1861970403066249218&scene=173&from_msgid=2247484814&from_itemidx=1&count=3&nolastread=1#wechat_redirect)，
 
 有任何问题，请加入Python学习群，和我交流~❤[交流群](https://mp.weixin.qq.com/s/wx-JkgOUoJhb-7ZESxl93w)
 
