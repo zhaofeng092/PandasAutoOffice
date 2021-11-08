@@ -41,7 +41,7 @@ Python知识星球👉[点击直达](https://t.zsxq.com/I2fIiMf)
 | [Python编程在金融中的应用（极简版）](https://www.bilibili.com/video/BV1rK4y1a76X) | 和上面第1套课，是同一家出的             |                                                              |
 | [Python金融数据分析高级训练营（完结）](https://www.bilibili.com/video/BV1Ut4y1i7wS) |                                         |                                                              |
 | [Python金融实务从入门到精通（综合运用，案例实战）](https://www.bilibili.com/video/BV1p54y1m75J) |                                         |                                                              |
-| [Python金融应用编程 (数据分析、定价与量化投资，有源代码)](https://www.bilibili.com/video/BV1bK4y1a7Rb) |                                         |                                                              |
+| [Python金融应用编程 (数据分析、定价与量化投资，有源代码)](https://www.bilibili.com/video/BV1bK4y1a7Rb) |                                         | [点我直达](https://gitee.com/zhaofeng092/PandasAutoOffice/tree/main/Python%E9%87%91%E8%9E%8D%E5%BA%94%E7%94%A8%E7%BC%96%E7%A8%8B(%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E3%80%81%E5%AE%9A%E4%BB%B7%E4%B8%8E%E9%87%8F%E5%8C%96%E6%8A%95%E8%B5%84)) |
 
 
 
