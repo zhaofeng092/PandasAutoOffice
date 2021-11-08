@@ -1,0 +1,108 @@
+df=pd.DataFrame(data)
+%time df.to_excel(path+'data.xlsx','data_sheet')
+%time np.save(path+'data',data)
+%time df=pd.read_excel(path+'data.xlsx','data_sheet')
+%time data=np.load(path+'data.npy')
+data,df=0.0,0.0
+
+##---(Sun Jan 03 12:42:26 2016)---
+class ExampleOne(object):    pass
+c=ExampleOne()
+type(c)
+c.__str__()
+class ExampleTwo(object):    def __init__(self,a,b):        self.a=a        self.b=b
+c=ExampleTwo(1,'text')
+c.a
+c.b
+c.a=100
+c.a
+c=ExampleOne()
+c.first_name='Jason'
+c.last_name='Bourne'
+c.movies=4
+print c.first_name,c.last_name,c.movies
+class ExampleThree(object):    def __init__(self,a,b):        self.a=a        self.b=b    def addition(self):        return self.a+self.b
+c=ExampleThree(10,15)
+c.addition()
+c.a+=10c.addition()
+class ExampleFour(ExampleTwo):    def addition(self):        return self.a+self.b
+c=ExampleFour(10,15)
+c.addition()
+class ExampleFive(ExampleFour):    def multiplication(self):        return self.a*self.b
+c=ExampleFive(10,15)
+c.addition()
+c.multiplication()
+def multiplication(self):    return self.a*self.b
+class ExampleSix(ExampleFour):    multiplication=multiplication
+c=ExampleSix(10,15)
+c.addition()
+c.multiplication()
+c.a
+class ExampleSeven(object):    def __init__(self,a,b):        self.a=a        self.b=b        self.__sum=a+b        multiplication=multiplication        def addition(self):            return self.__sum
+c=ExampleSeven(10,15)
+multiplication
+class ExampleSeven(object):    def __init__(self,a,b):        self.a=a        self.b=b        self.__sum=a+b    multiplication=multiplication    def addition(self):        return self.__sum
+c=ExampleSeven(10,15)
+c.addition()
+c._ExampleSeven__sum
+c.a+=10
+c.a
+c.addition()
+c._ExampleSeven__sum
+c.multiplication()
+name_list=['Sandra','Lilli','Guido','Zorro','Henry']
+for name in name_list:    print name    
+class sorted_list(object):    def __init__(self,elements):        self.elements=sorted(elements)    def __iter__(self):        self.position=-1        return self    def next(self):        if self.position==len(self.elements)-1:            raise StopIteration        self.postion+=1        return self.elements[self.position]
+sorted_name_list=sorted_list(name_list)
+for name in sorted_name_list:    print name
+class sorted_list(object):    def __init__(self,elements):        self.elements=sorted(elements)    def __iter__(self):        self.position=-1        return self    def next(self):        if self.position==len(self.elements)-1:            raise StopIteration        self.position+=1        return self.elements[self.position]
+sorted_name_list=sorted_list(name_list)
+for name in sorted_name_list:    print name
+type(sorted_name_list)
+import numpy as npdef discount_factor(r,t):    df=np.exp(-r*t)    return df
+import matplotlib.pyplot as plt%matplotlib inlinet=np.linspace(0,5)for r in [0.01,0.05,0.1]:    plt.plot(t,discount_factor(r,t),label='r=%4.2f' % r,lw=1.5)plt.xlabel('year')plt.ylabel('discount factor')plt.grid(True)plt.legend(loc=0)
+class short_rate(object):    def __init__(self,name,rate):        self.name=name        self.rate=rate    def get_discount_factors(self,time_list):        time_list=np.array(time_list)        return np.exp(-self.rate*time_list)
+sr=short_rate('r',0.05)
+sr.name,sr.rate
+time_list=[0.0,0.5,1.0,1.25,1.75,2.0]
+sr.get_discount_factors(time_list)
+for r in [0.025,0.05,0.1,0.15]:    sr.rate=r    plt.plot(t,sr.get_discount_factors(t),label='r=%4.2f' % sr.rate,lw=1.5)plt.xlabel('years')plt.ylabel('discount factor')plt.grid(True)plt.legend(loc=0)
+sr.rate=0.05cash_flows=np.array([-100,50,75])time_list=[0.0,1.0,2.0]
+disc_facts=sr.get_discount_factors(time_list)
+disc_facts
+disc_facts*cash_flows
+np.sum(disc_facts*cash_flows)
+sr.rate=0.15
+np.sum(sr.get_discount_factors(time_list)*cash_flows)
+class cash_flow_series(object):    def __init__(self,name,time_list,cash_flows,short_rate):        self.name=name        self.time_list=time_list        self.cash_flows=cash_flows        self.short_rate=short_rate    def present_value_list(self):        df=self.short_rate.get_discount_factors(self.time_list)        return np.array(self.cash_flows)*df    def net_present_value(self):        return np.sum(self.present_value_list())
+sr.rate=0.05cfs=cash_flow_series('cfs',time_list,cash_flows,sr)cfs.cash_flows
+cfs.time_list
+cfs.present_value_list()
+cfs.net_present_value()
+class cfs_sensitivity(cash_flow_series):    def npv_sensitivity(self,short_rates):        npvs=[]        for rate in short_rates:            sr.rate=rate            npvs.append(self.net_present_value())        return np.array(npvs)
+cfs_sens=cfs_sensitivity('cfs',time_list,cash_flows,sr)
+short_rates=[0.01,0.025,0.05,0.075,0.1,0.125,0.15,0.2]npvs=cfs_sens.npv_sensitivity(short_rates)
+npvs
+plt.plot(short_rates,npvs,'b')plt.plot(short_rates,npvs,'ro')
+plt.plot(short_rates,npvs,'b')plt.plot(short_rates,npvs,'ro')plt.plot((0,max(short_rates)),(0,0),'r',lw=2)plt.grid(True)plt.xlabel('short rate')plt.ylabel('net present value')
+import numpy as npimport traits.api as trapi
+class short_rate(trapi.HasTraits)£º
+class short_rate(trapi.HasTraits):    name=trapi.Str    rate=trapi.Float    time_list=trapi.Array(dtype=np.float,shape=(5,))    def get_discount_factors(self):        return np.exp(-self.rate*self.time_list)
+sr=short_rate()
+sr.configure_traits()
+sr.get_discount_factors()
+import traits.api as trapiimport traitsui.api as trui
+class short_rate(trapi.HasTraits):    name=trapi.Str    rate=trapi.Float    time_list=trapi.Array(dtype=np.float,shape=(1,5))    disc_list=trapi.Array(dtype=np.float,shape=(1,5))    update=trapi.Button    def _update_fired(self):        self.disc_list=np.exp(-self.rate*self.time_list)    v=trui.View(trui.Group(trui.Item(name='name'),                trui.Item(name='rate'),                trui.Item(name='time_list',label='Insert Time List Here'),                trui.Item('update',show_label=False)                                trui.Item(name='disc_list',label='Press Update for Factors'),                show_border=True,label='Calculate Discount Factors'),                butoons=[trui.OKButton,trui.CanButton],                resizeble=True)
+class short_rate(trapi.HasTraits):    name=trapi.Str    rate=trapi.Float    time_list=trapi.Array(dtype=np.float,shape=(1,5))    disc_list=trapi.Array(dtype=np.float,shape=(1,5))    update=trapi.Button    def _update_fired(self):        self.disc_list=np.exp(-self.rate*self.time_list)    v=trui.View(trui.Group(trui.Item(name='name'),                trui.Item(name='rate'),                trui.Item(name='time_list',label='Insert Time List Here'),                trui.Item('update',show_label=False),                                trui.Item(name='disc_list',label='Press Update for Factors'),                show_border=True,label='Calculate Discount Factors'),                butoons=[trui.OKButton,trui.CanButton],                resizeble=True)
+class short_rate(trapi.HasTraits):    name=trapi.Str    rate=trapi.Float    time_list=trapi.Array(dtype=np.float,shape=(1,5))    disc_list=trapi.Array(dtype=np.float,shape=(1,5))    update=trapi.Button    def _update_fired(self):        self.disc_list=np.exp(-self.rate*self.time_list)    v=trui.View(trui.Group(trui.Item(name='name'),                trui.Item(name='rate'),                trui.Item(name='time_list',label='Insert Time List Here'),                trui.Item('update',show_label=False),                                trui.Item(name='disc_list',label='Press Update for Factors'),                show_border=True,label='Calculate Discount Factors'),                butoons=[trui.OKButton,trui.CancelButton],                resizeble=True)
+class short_rate(trapi.HasTraits):    name=trapi.Str    rate=trapi.Float    time_list=trapi.Array(dtype=np.float,shape=(1,5))    disc_list=trapi.Array(dtype=np.float,shape=(1,5))    update=trapi.Button    def _update_fired(self):        self.disc_list=np.exp(-self.rate*self.time_list)    v=trui.View(trui.Group(trui.Item(name='name'),                trui.Item(name='rate'),                trui.Item(name='time_list',label='Insert Time List Here'),                trui.Item('update',show_label=False),                                trui.Item(name='disc_list',label='Press Update for Factors'),                show_border=True,label='Calculate Discount Factors'),                butoons=[trui.OKButton,trui.CancelButton],                resizable=True)
+class short_rate(trapi.HasTraits):    name=trapi.Str    rate=trapi.Float    time_list=trapi.Array(dtype=np.float,shape=(1,5))    disc_list=trapi.Array(dtype=np.float,shape=(1,5))    update=trapi.Button    def _update_fired(self):        self.disc_list=np.exp(-self.rate*self.time_list)    v=trui.View(trui.Group(trui.Item(name='name'),                trui.Item(name='rate'),                trui.Item(name='time_list',label='Insert Time List Here'),                trui.Item('update',show_label=False),                                trui.Item(name='disc_list',label='Press Update for Factors'),                show_border=True,label='Calculate Discount Factors'),                buttons=[trui.OKButton,trui.CancelButton],                resizable=True)
+sr=short_rate()
+sr.configure_traits()
+class cash_flow_series(trapi.HasTraits):    name=trapi.Str    short_rate=trapi.Range(0.0,0.5,0.05)    time_list=trapi.Array(dtype=np.float,shape=(1,6))    cash_flows=trapi.Array(dtype=np.float,shape=(1,6))    disc_values=trapi.Array(dtype=np.float,shape=(1,6))    present_values=trapi.Array(dtype=np.float,shape=(1,6))    net_present_value=trapi.Float    update=trapi.Button    def _update_fired(self):        self.disc_values=np.exp(-self.short_rate*self.time_list)        self.present_values=self.disc_values*self.cash_flows        self.net_present_value=np.sum(self.present_values)    v=trui.View(trui.Group(trui.Item(name='name'),                trui.Item(name='short_rate'),                trui.Item(name='time_list',label='Time List'),                trui.Item(name='cash_flows',label='Cash Flows'),                trui.Item('update',show_label=False),                trui.Item(name='disc_values',label='Discount Factors'),                trui.Item(name='present_values',label='Present Values'),                trui.Item(name='net_present_value',label='Net Present Value'),                show_border=True,label='Calculate Present Values'),                buttons=[trui.OKButton,trui.CancelButton],                resizable=True)
+cfs=cash_flow_series()
+cfs.configure_traits()
+                resizable=True)
+
+sr=short_rate()
+sr.configure_traits()

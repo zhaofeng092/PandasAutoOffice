@@ -1,0 +1,182 @@
+path='./data/'
+import numpy as np
+from random import gauss
+
+a=[gauss(1.5,2) for i in range(1000000)]
+import pickle
+pkl_file=open(path+'data.pkl','w')
+%time pickle.dump(a,pkl_file)
+pkl_file
+pkl_file.close()
+pkl_file.open(path+'data.pkl','r')
+pkl_file=open(path+'data.pkl','r')
+%time b=pickle.load(pkl_file)
+b[:5]
+a[:5]
+np.allclose(np.array(a),np.array(b))
+np.sum(np.array(a)-np.array(b))
+pkl_file=open(path+'data.pkl','w')
+%time pickle.dump(np.array(a),pkl_file)
+%time pickle.dump(np.array(a)**2,pkl_file)
+pkl_file.close()
+pkl_file=open(path+'data.pkl','r')
+x=pickle.load(pkl_file)
+x
+
+y=pickle.load(pkl_file)
+y
+
+pkl_file=open(path+'data.pkl
+pkl_file=open(path+'data.pkl','w')
+pickle.dump({'x':x,'y':y},pkl_file)
+pkl_file.close()
+
+pkl_file=open(path+'data.pkl','r')
+data=pickle.load(pkl_file)
+pkl_file.close()
+for key in data.keys():
+    print key,data[key][:4]
+
+rows=5000
+a=np.random.standard_normal((rows,5))
+
+a.round(4)
+import pandas as pd
+t=pd.date_range(start='2014/1/1',periods=rows,freq='H')
+
+t
+csv_file=open(path+'data.csv','w')
+header='date,no1,no2,no3,no4,no5\n'
+csv_file.write(header)
+for t_,(no1,no2,no3,no4,no5) in zip(t,a):
+    s='%s,%f,%f,%f,%f,%f\n' % (t_,no1,no2,no3,no4,no5)
+    csv_file.write(s)
+csv_file.close()
+
+csv_file=open(path+'data.csv','r')
+for i in range(5):
+    print csv_file.readline()
+
+csv_file=open(path+'data.csv','r')
+content=csv_file.readlines()
+for line in content[:5]:
+    print line
+
+import sqlite3 as sq3
+query='CREATE TABLE numbs (Date date,No1 real,No2 real)'
+con=sq3.connect(path+'numbs.db')
+con.execute(query)
+con.commit()
+import datetime as dt
+con.execute('INSERT INTO numbs VALUES(?,?,?)',
+              (dt.datetime.now(),0.12,7.3))
+date=np.random.standard_normal((10000,2)).round(5)
+for row in data:
+    con.execute('INSERT INTO numbs VALUES(?,?,?)',
+             (dt.datetime.now(),row[0],row[1]))
+con.commit()
+
+for row in data:
+    con.execute('INSERT INTO numbs VALUES(?,?,?)',
+             (dt.datetime.now(),row[0],row[1]))
+con.commit()
+
+data
+data=np.random.standard_normal((10000,2)).round(5)
+for row in data:
+    con.execute('INSERT INTO numbs VALUES(?,?,?)',
+             (dt.datetime.now(),row[0],row[1]))
+con.commit()
+
+con.execute('SELECT * FROM numbs').fetchmany(10)
+pointer=con.execute('SELECT * FROM numbs')
+for i in range(3):
+    print pointer.fetchone()
+
+con.close()
+import numpy as np
+dtimes=np.arange('2015-01-01 10:00:00','2021-12-31 22:00:00',
+               dtype='datetime64[m]')
+len(dtimes)
+dty=np.dtype([('Date','datetime65[m]'),('No1','f'),('No2','f')])
+data=np.zeros(len(dtimes),dtype=dty)
+
+dty=np.dtype([('Date','datetime64[m]'),('No1','f'),('No2','f')])
+data=np.zeros(len(dtimes),dtype=dty)
+
+data['Date']=dtimes
+a=np.random.standard_normal((len(dtimes),2)).round(5)
+data['No1']=a[:,0]
+data['No2']=a[:,1]
+
+%time np.save(path_'array',data)
+%time np.save(path+'array',data)
+%time np.load(path+'array.npy')
+data=np.random.standard_normal((10000,6000))
+%time np.save(path+'array',data)
+%time np.load(path+'array.npy')
+import numpy as np
+import pandas as pd
+data=np.random.standard_normal((1000000,5)).round(5)
+filename=path+'numbs'
+import sqlite3 as sq3
+query='CREATE TABLE numbers (No1 real,No2 real,No3 real,No4 real,No5 real)'
+con=sq3.Connection(filename+'.db')
+con.execute(query)
+%%time
+con.executemany('INSERT INTO numbers VALUES (?,?,?,?,?)',data)
+con.commit()
+
+%%time
+temp=con.execute('SELECT * FROM numbers').fetchall()
+print temp[:2]
+temp=0.0
+
+%%time
+query='SELECT * FROM numbers WHERE No1>0 AND No2>0'
+res=np.array(con.execute(query).fetchall()).round(3)
+
+res=res[::100]
+import matplotlib.pyplot as plt
+%matplotlib inline
+plt.plot(res[:,0],res[:,1],'ro')
+plt.grid(True);plt.xlim(-0.5,4.5);plt.ylim(-4.5,0.5)
+
+import pandas.io.sql as pds
+%time data=pds.read_sql('SELECT * FROM numbers',con)
+data.head()
+%time data[(data['No1']>0) &(data['No2']<0)].head()
+%%time\
+res=data[['No1','No2'][((data['No1']>0.5)|(data['No1']<-0.5))&((data['No2']<-1)|(data['No2']<1))]]
+
+%%time
+res=data[['No1','No2'][((data['No1']>0.5)|(data['No1']<-0.5))&((data['No2']<-1)|(data['No2']<1))]]
+
+%%time
+res=data[['No1','No2']][((data['No1']>0.5)|(data['No1']<-0.5))&((data['No2']<-1)|(data['No2']<1))]
+
+plt.plot(res.No1,res.No2,'ro')
+plt.grid(True);plt.axis('tight')
+
+h5s=pd.HDFStore(filename+'.h5s','w')
+%time h5s['data']=data
+h5s
+h5s.close()
+%%time
+h5s=pd.HDFStore(filename+'.h5s','r')
+temp=h5s('data')
+h5s.close()
+
+%%time
+h5s=pd.HDFStore(filename+'.h5s','r')
+temp=h5s['data']
+h5s.close()
+
+np.allclose(np.array(temp),np.array(data))
+temp=0.0
+%time data.to_csv(filename+'.csv')
+%%time
+pd.read_csv(filename+'.csv')[['No1','No2','No3','No4']].hist(bins=20)
+
+%time data[:100000].to_excel(filename+'.xlsx')
+%time pd.read_excel(filename+'.xlsx','Sheet1').cumsum().plot()

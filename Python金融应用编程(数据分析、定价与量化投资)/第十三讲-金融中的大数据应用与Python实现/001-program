@@ -1,0 +1,191 @@
+[cloudera@quickstart ~]$ hadoop fs -copyFromLocal /home/cloudera/Downloads/pg4300.txt pg4300.txt
+[cloudera@quickstart ~]$ hadoop fs -ls
+Found 1 items
+-rw-r--r--   1 cloudera cloudera    1573151 2016-01-02 23:28 pg4300.txt
+[cloudera@quickstart ~]$ mkdir word_count
+[cloudera@quickstart ~]$ ls
+cloudera-manager  Downloads                   kerberos  Pictures   word_count
+cm_api.py         eclipse                     lib       Public     workspace
+Desktop           enterprise-deployment.json  Music     Templates
+Documents         express-deployment.json     parcels   Videos
+[cloudera@quickstart ~]$ gedit /home/cloudera/word_count/mapper.py
+[cloudera@quickstart ~]$ chmod +x /home/cloudera/word_count/mapper.py
+[cloudera@quickstart ~]$ gedit /home/cloudera/word_count/reduce.py
+[cloudera@quickstart ~]$ chmod +x /home/cloudera/word_count/reduce.py
+[cloudera@quickstart ~]$ echo "foo foo quux labs foo bar quux" | /home/cloudera/word_count/mapper.py
+  File "/home/cloudera/word_count/mapper.py", line 5
+    from line in sys.stdin:
+               ^
+SyntaxError: invalid syntax
+[cloudera@quickstart ~]$ gedit /home/cloudera/word_count/mapper.py[cloudera@quickstart ~]$ echo "foo foo quux labs foo bar quux" | /home/cloudera/word_count/mapper.py
+  File "/home/cloudera/word_count/mapper.py", line 6
+    for word in line.strip().split()
+                                   ^
+SyntaxError: invalid syntax
+[cloudera@quickstart ~]$ gedit /home/cloudera/word_count/mapper.py[cloudera@quickstart ~]$ echo "foo foo quux labs foo bar quux" | /home/cloudera/word_count/mapper.py
+foo	1
+foo	1
+quux	1
+labs	1
+foo	1
+bar	1
+quux	1
+[cloudera@quickstart ~]$ echo "foo foo quux labs foo bar quux" | /home/cloudera/word_count/mapper.py | sort -kl,l | /home/cloudera/word_count/reduce.py
+sort: invalid number at field start: invalid count at start of `l,l'
+close failed in file object destructor:
+Error in sys.excepthook:
+
+Original exception was:
+[cloudera@quickstart ~]$ echo "foo foo quux labs foo bar quux" | /home/cloudera/word_count/mapper.py | sort -k1,1 | /home/cloudera/word_count/reduce.py
+bar	1
+foo	3
+labs	1
+quux	2
+[cloudera@quickstart ~]$ ^C
+[cloudera@quickstart ~]$ hadoop jar /usr/lib/hadoop-0.20-mapreduce/contrib/streaming/hadoop-streaming-2.6.0-mr1-cdh5.5.0.jar -file /home/cloudera/word_count/mapper.py -mapper /home/cloudera/word_count/mapper.py -file /home/cloudera/word_count/reduce.py -reducer /home/cloudera/word_count/reduce.py -input pg4300.txt -output pg4300-output
+
+[cloudera@quickstart ~]$ hadop fs -copyFromLocal /home/cloudera/Downloads/ibm.csv ibm.csv
+bash: hadop: command not found
+[cloudera@quickstart ~]$ hadoop fs -copyFromLocal /home/cloudera/Downloads/ibm.csv ibm.csv
+[cloudera@quickstart ~]$ hadoop fs -ls
+Found 3 items
+-rw-r--r--   1 cloudera cloudera     867632 2016-01-02 23:57 ibm.csv
+drwxr-xr-x   - cloudera cloudera          0 2016-01-02 23:47 pg4300-output
+-rw-r--r--   1 cloudera cloudera    1573151 2016-01-02 23:28 pg4300.txt
+[cloudera@quickstart ~]$ mkdir stock
+[cloudera@quickstart ~]$ gedit /home/cloudera/stock/mapper.py
+[cloudera@quickstart ~]$ chmod +x /home/cloudera/stock/mapper.py
+[cloudera@quickstart ~]$ chmod +x /home/cloudera/stock/reduce.py
+[cloudera@quickstart ~]$ cat /home/cloudera/Downloads/ibm.csv | /home/cloudera/stock/mapper.py
+
+hadoop jar /usr/lib/hadoop-0.20-mapreduce/contrib/streaming/hadoop-streaming-2.6.0-mr1-cdh5.5.0.jar -file /home/cloudera/stock/mapper.py -mapper /home/cloudera/stock/mapper.py -file /home/cloudera/stock/reduce.py -reducer /home/cloudera/stock/reduce.py -input ibm.csv -output stock-output
+
+[cloudera@quickstart ~]$ hadoop fs -copyToLocal stock-output/part-00000 /home/cloudera/stock
+[cloudera@quickstart ~]$ sudo yum install python-matplotlib
+Loaded plugins: fastestmirror, security
+Determining fastest mirrors
+epel/metalink                                            | 8.0 kB     00:00     
+ * base: centos-distro.cavecreek.net
+ * epel: mirror.sfo12.us.leaseweb.net
+ * extras: mirrors.sonic.net
+ * updates: mirror.keystealth.org
+base                                                     | 3.7 kB     00:00     
+base/primary_db                                          | 4.6 MB     00:16     
+cloudera-cdh5                                            |  951 B     00:00     
+cloudera-cdh5/primary                                    |  43 kB     00:00     
+cloudera-cdh5                                                           146/146
+cloudera-gplextras5                                      |  951 B     00:00     
+cloudera-gplextras5/primary                              | 2.4 kB     00:00     
+cloudera-gplextras5                                                         9/9
+cloudera-manager                                         |  951 B     00:00     
+cloudera-manager/primary                                 | 4.1 kB     00:00     
+cloudera-manager                                                            7/7
+epel                                                     | 4.3 kB     00:00     
+epel/primary_db                                          | 5.7 MB     00:09     
+extras                                                   | 2.9 kB     00:00     
+extras/primary_db                                        |  33 kB     00:00     
+updates                                                  | 3.4 kB     00:00     
+updates/primary_db                                       | 3.3 MB     00:09     
+Setting up Install Process
+Resolving Dependencies
+--> Running transaction check
+---> Package python-matplotlib.x86_64 0:0.99.1.2-1.el6 will be installed
+--> Processing Dependency: pytz for package: python-matplotlib-0.99.1.2-1.el6.x86_64
+--> Processing Dependency: python-dateutil for package: python-matplotlib-0.99.1.2-1.el6.x86_64
+--> Processing Dependency: numpy for package: python-matplotlib-0.99.1.2-1.el6.x86_64
+--> Running transaction check
+---> Package numpy.x86_64 0:1.4.1-9.el6 will be installed
+--> Processing Dependency: python-nose for package: numpy-1.4.1-9.el6.x86_64
+--> Processing Dependency: libptf77blas.so.3()(64bit) for package: numpy-1.4.1-9.el6.x86_64
+--> Processing Dependency: libptcblas.so.3()(64bit) for package: numpy-1.4.1-9.el6.x86_64
+--> Processing Dependency: liblapack.so.3()(64bit) for package: numpy-1.4.1-9.el6.x86_64
+--> Processing Dependency: libgfortran.so.3()(64bit) for package: numpy-1.4.1-9.el6.x86_64
+--> Processing Dependency: libatlas.so.3()(64bit) for package: numpy-1.4.1-9.el6.x86_64
+---> Package python-dateutil.noarch 0:1.4.1-6.el6 will be installed
+---> Package pytz.noarch 0:2010h-2.el6 will be installed
+--> Running transaction check
+---> Package atlas.x86_64 0:3.8.4-2.el6 will be installed
+---> Package libgfortran.x86_64 0:4.4.7-16.el6 will be installed
+---> Package python-nose.noarch 0:0.10.4-3.1.el6 will be installed
+--> Finished Dependency Resolution
+
+Dependencies Resolved
+
+================================================================================
+ Package                  Arch          Version               Repository   Size
+================================================================================
+Installing:
+ python-matplotlib        x86_64        0.99.1.2-1.el6        base        3.2 M
+Installing for dependencies:
+ atlas                    x86_64        3.8.4-2.el6           base        2.8 M
+ libgfortran              x86_64        4.4.7-16.el6          base        267 k
+ numpy                    x86_64        1.4.1-9.el6           base        2.3 M
+ python-dateutil          noarch        1.4.1-6.el6           base         84 k
+ python-nose              noarch        0.10.4-3.1.el6        base        220 k
+ pytz                     noarch        2010h-2.el6           base         35 k
+
+Transaction Summary
+================================================================================
+Install       7 Package(s)
+
+Total download size: 9.0 M
+Installed size: 36 M
+Is this ok [y/N]: y
+Downloading Packages:
+(1/7): atlas-3.8.4-2.el6.x86_64.rpm                      | 2.8 MB     00:06     
+(2/7): libgfortran-4.4.7-16.el6.x86_64.rpm               | 267 kB     00:00     
+(3/7): numpy-1.4.1-9.el6.x86_64.rpm                      | 2.3 MB     00:04     
+(4/7): python-dateutil-1.4.1-6.el6.noarch.rpm            |  84 kB     00:00     
+(5/7): python-matplotlib-0.99.1.2-1.el6.x86_64.rpm       | 3.2 MB     00:08     
+(6/7): python-nose-0.10.4-3.1.el6.noarch.rpm             | 220 kB     00:00     
+(7/7): pytz-2010h-2.el6.noarch.rpm                       |  35 kB     00:00     
+--------------------------------------------------------------------------------
+Total                                           403 kB/s | 9.0 MB     00:22     
+warning: rpmts_HdrFromFdno: Header V3 RSA/SHA1 Signature, key ID c105b9de: NOKEY
+Retrieving key from file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-6
+Importing GPG key 0xC105B9DE:
+ Userid : CentOS-6 Key (CentOS 6 Official Signing Key) <centos-6-key@centos.org>
+ Package: centos-release-6-4.el6.centos.10.x86_64 (@CentOS 6.4 Mirror/6.4)
+ From   : /etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-6
+Is this ok [y/N]: y
+Running rpm_check_debug
+Running Transaction Test
+Transaction Test Succeeded
+Running Transaction
+  Installing : libgfortran-4.4.7-16.el6.x86_64                              1/7 
+  Installing : atlas-3.8.4-2.el6.x86_64                                     2/7 
+  Installing : python-nose-0.10.4-3.1.el6.noarch                            3/7 
+  Installing : numpy-1.4.1-9.el6.x86_64                                     4/7 
+  Installing : python-dateutil-1.4.1-6.el6.noarch                           5/7 
+  Installing : pytz-2010h-2.el6.noarch                                      6/7 
+  Installing : python-matplotlib-0.99.1.2-1.el6.x86_64                      7/7 
+  Verifying  : libgfortran-4.4.7-16.el6.x86_64                              1/7 
+  Verifying  : pytz-2010h-2.el6.noarch                                      2/7 
+  Verifying  : python-matplotlib-0.99.1.2-1.el6.x86_64                      3/7 
+  Verifying  : python-dateutil-1.4.1-6.el6.noarch                           4/7 
+  Verifying  : numpy-1.4.1-9.el6.x86_64                                     5/7 
+  Verifying  : atlas-3.8.4-2.el6.x86_64                                     6/7 
+  Verifying  : python-nose-0.10.4-3.1.el6.noarch                            7/7 
+
+Installed:
+  python-matplotlib.x86_64 0:0.99.1.2-1.el6                                     
+
+Dependency Installed:
+  atlas.x86_64 0:3.8.4-2.el6             libgfortran.x86_64 0:4.4.7-16.el6      
+  numpy.x86_64 0:1.4.1-9.el6             python-dateutil.noarch 0:1.4.1-6.el6   
+  python-nose.noarch 0:0.10.4-3.1.el6    pytz.noarch 0:2010h-2.el6              
+
+Complete!
+[cloudera@quickstart ~]$ gedit /home/cloudera/stock/analysis.py
+[cloudera@quickstart ~]$ python /home/cloudera/stock/analysis.py
+  File "/home/cloudera/stock/analysis.py", line 9
+    print "Max: ",max(x)
+        ^
+SyntaxError: invalid syntax
+[cloudera@quickstart ~]$ gedit /home/cloudera/stock/analysis.py
+[cloudera@quickstart ~]$ python /home/cloudera/stock/analysis.py
+Max:  23.5
+Min:  -13.0
+/usr/lib64/python2.6/site-packages/matplotlib/backends/backend_gtk.py:621: DeprecationWarning: Use the new widget gtk.Tooltip
+  self.tooltips = gtk.Tooltips()
+

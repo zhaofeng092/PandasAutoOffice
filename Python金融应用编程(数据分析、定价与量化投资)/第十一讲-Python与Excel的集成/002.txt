@@ -1,0 +1,40 @@
+In [1]: Cell("B1")
+Out[1]: B1
+
+In [2]: Cell("B1").value
+Out[2]: 9
+
+In [3]: Cell("B1").value='Excel with Python'
+
+In [4]: Cell("B1").value
+Out[4]: u'Excel with Python'
+
+In [5]: Cell("A9").formula='=Sum(A1:A8)'
+
+In [6]: Cell("A9").value
+Out[6]: 36
+
+In [7]: Cell("A1").font.size=15
+
+In [8]: CellRange("A1:A8").value
+Out[8]: [1, 2, 3, 4, 5, 6, 7, 8]
+
+In [9]: CellRange("A1:A8").value=1
+
+In [10]: CellRange("A1:A8").value=2*[1,2,3,4]
+
+In [11]: CellRange("A1:A8").value
+Out[11]: [1, 2, 3, 4, 1, 2, 3, 4]
+
+In [12]: Cell("A9").value
+Out[12]: 20
+
+In [13]: for cell in CellRange("A1:B2"):
+   ....:     print cell.name,cell.value
+   ....:
+A1 1
+B1 Excel with Python
+A2 2
+B2 10
+
+In [14]:

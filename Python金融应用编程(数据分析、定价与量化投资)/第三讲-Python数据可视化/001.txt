@@ -1,0 +1,51 @@
+##---(Sun Dec 13 16:13:35 2015)---
+import matplotlib as mplimport numpy as npimport matplotlib.pyplot as plt%matplotlib inline
+np.random.seed(1000)y=np.random.standard_normal(20)
+y
+x=range(len(y))
+x
+plt.plot(x,y)
+plt.plot(y)
+plt.plot(y.cumsum())
+plt.plot(y.cumsum())plt.grid(True)plt.axis('tight')
+plt.plot(y.cumsum())plt.grid(True)plt.xlim(-1,20)plt.ylim(np.min(y.cumsum())-1,np.max(y.cumsum())+1)
+plt.figure(figsize=(7,4))plt.plot(y.cumsum(),'b',lw=1.5)plt.plot(y.cumsum(),'ro')plt.grid(True)plt.axis('tight')plt.xlabel('index')plt.ylabel('value')plt.title('A Simplot plot')
+np.random.seed(2000)
+y=np.random.standard_normal((20,2)).cumsum(axis=0)
+y
+plt.figure(figsize=(7,4))plt.plot(y,lw=1.5)plt.plot(y,'ro')plt.grid(True)plt.axis('tight')plt.xlabel('index')plt.ylabel('value')plt.title('A Simple Plot')
+plt.figure(figsize=(7,4))plt.plot(y[:,0],lw=1.5,label='1st')plt.plot(y[:,1],lw=1.5,label='2nd')plt.plot(y,'ro')plt.grid(True)plt.legend(loc=0)plt.axis('tight')plt.xlabel('index')plt.ylabel('value')plt.title('A Simple Plot')
+y[:,0]=y[:,0]*100plt.figure(figsize=(7,4))plt.plot(y.cumsum(),'b',lw=1.5)plt.plot(y.cumsum(),'ro')plt.grid(True)plt.axis('tight')plt.xlabel('index')plt.ylabel('value')plt.title('A Simplot plot')
+y[:,0]=y[:,0]*100plt.figure(figsize=(7,4))plt.plot(y[:,0],lw=1.5,label='1st')plt.plot(y[:,1],lw=1.5,label='2nd')plt.plot(y,'ro')plt.grid(True)plt.legend(loc=0)plt.axis('tight')plt.xlabel('index')plt.ylabel('value')plt.title('A Simple Plot')
+fig,ax1=plt.subplots()plt.plot(y[:,0],'b',lw=1.5,label='1st')plt.plot(y[:,0],'ro')plt.grid(True)plt.legend(loc=0)plt.axis('tight')plt.xlabel('index')plt.ylabel('value 1st')plt.tltle('A Simplot plot')ax2=ax1.twinx()plt.plot(y[:,1],'g',lw=1.5,lable='2nd')plt.plot(y[:,1],'ro')plt.legend(loc=0)plt.ylabel('value 2nd')
+fig,ax1=plt.subplots()plt.plot(y[:,0],'b',lw=1.5,label='1st')plt.plot(y[:,0],'ro')plt.grid(True)plt.legend(loc=0)plt.axis('tight')plt.xlabel('index')plt.ylabel('value 1st')plt.title('A Simplot plot')ax2=ax1.twinx()plt.plot(y[:,1],'g',lw=1.5,lable='2nd')plt.plot(y[:,1],'ro')plt.legend(loc=0)plt.ylabel('value 2nd')
+fig,ax1=plt.subplots()plt.plot(y[:,0],'b',lw=1.5,label='1st')plt.plot(y[:,0],'ro')plt.grid(True)plt.legend(loc=0)plt.axis('tight')plt.xlabel('index')plt.ylabel('value 1st')plt.title('A Simplot plot')ax2=ax1.twinx()plt.plot(y[:,1],'g',lw=1.5,label='2nd')plt.plot(y[:,1],'ro')plt.legend(loc=0)plt.ylabel('value 2nd')
+plt.figure(figsize=(7,5))plt.subplot(211)plt.plot(y[:,0],'b',lw=1.5,label='1st')plt.plot(y[:,0],'ro')plt.grid(True)plt.legend(loc=0)plt.axis('tight')plt.xlabel('index')plt.ylabel('value 1st')plt.title('A Simplot plot')plt.subplot(212)plt.plot(y[:,1],'g',lw=1.5,label='2nd')plt.plot(y[:,1],'ro')plt.legend(loc=0)plt.ylabel('value 2nd')
+plt.figure(figsize=(9,4))plt.subplot(121)plt.plot(y[:,0],'b',lw=1.5,label='1st')plt.plot(y[:,0],'ro')plt.grid(True)plt.legend(loc=0)plt.axis('tight')plt.xlabel('index')plt.ylabel('value')plt.title('1st data set')plt.subplot(122)plt.bar(np.arange(len(y)),y[:,1],width=0.5,color='g',label='2nd')plt.grid(True)plt.legend(loc=0)plt.axis('tight')plt.xlabel('index')plt.title('2nd Data Set')
+y=np.random.standard_normal((1000,2))
+plt.figure(figsize=(7,5))plt.plot(y[:,0],y[:,1],'ro')plt.grid(True)plt.xlabel('1st')plt.ylabel('2nd')plt.title('Scatter Plot')
+plt.figure(figsize=(7,5))plt.plot(y[:,0],y[:,1],marker='o')plt.grid(True)plt.xlabel('1st')plt.ylabel('2nd')plt.title('Scatter Plot')
+c=np.random.randint(0,10,len(y))
+c
+plt.figure(figsize=(7,5))plt.plot(y[:,0],y[:,1],c=c,marker='o')plt.colorbar()plt.grid(True)plt.xlabel('1st')plt.ylabel('2nd')plt.title('Scatter Plot')
+plt.figure(figsize=(7,5))plt.plot(y[:,0],y[:,1],c=c)plt.colorbar()plt.grid(True)plt.xlabel('1st')plt.ylabel('2nd')plt.title('Scatter Plot')
+plt.figure(figsize=(7,5))plt.plot(y[:,0],y[:,1],c)plt.colorbar()plt.grid(True)plt.xlabel('1st')plt.ylabel('2nd')plt.title('Scatter Plot')
+plt.figure(figsize=(7,5))plt.plot(y[:,0],y[:,1],c=%c)plt.colorbar()plt.grid(True)plt.xlabel('1st')plt.ylabel('2nd')plt.title('Scatter Plot')
+plt.figure(figsize=(7,5))plt.plot(y[:,0],y[:,1],%c)plt.colorbar()plt.grid(True)plt.xlabel('1st')plt.ylabel('2nd')plt.title('Scatter Plot')
+plt.figure(figsize=(7,5))plt.plot(y[:,0],y[:,1],c=c)plt.colorbar()plt.grid(True)plt.xlabel('1st')plt.ylabel('2nd')plt.title('Scatter Plot')
+c
+plt.figure(figsize=(7,5))plt.plot(y[:,0],y[:,1],c=c,marker='o')plt.colorbar()plt.grid(True)plt.xlabel('1st')plt.ylabel('2nd')plt.title('Scatter Plot')
+y[:,0]
+y[:,1]
+plt.figure(figsize=(7,5))plt.plot(y[:,0],y[:,1],c,marker='o')plt.colorbar()plt.grid(True)plt.xlabel('1st')plt.ylabel('2nd')plt.title('Scatter Plot')
+plt.figure(figsize=(7,5))plt.plot(y[:,0],y[:,1],color=c,marker='o')plt.colorbar()plt.grid(True)plt.xlabel('1st')plt.ylabel('2nd')plt.title('Scatter Plot')
+plt.figure(figsize=(7,5))plt.scatter(y[:,0],y[:,1],c=c,marker='o')plt.colorbar()plt.grid(True)plt.xlabel('1st')plt.ylabel('2nd')plt.title('Scatter Plot')
+y[:,0]
+plt.figure(figsize=(7,4))
+plt.figure(figsize=(7,4))plt.hist(y,label=['1st','2nd'],bins=25)plt.grid(True)plt.legend(loc=0)plt.xlabel('value')plt.ylabel('frequency')plt.title('Histogram)
+plt.figure(figsize=(7,4))plt.hist(y,label=['1st','2nd'],bins=25)plt.grid(True)plt.legend(loc=0)plt.xlabel('value')plt.ylabel('frequency')plt.title('Histogram')
+plt.figure(figsize=(7,4))plt.hist(y,label=['1st','2nd'],color=['b','g'],stacked=True,bins=25)plt.grid(True)plt.legend(loc=0)plt.xlabel('value')plt.ylabel('frequency')plt.title('Histogram')
+fig,ax=plt.subplots(figsize=(7,4))plt.boxplot(y)plt.grid(True)plt.setp(ax,xticklabels=['1st','2nd']plt.xlabel('data set')plt.ylabel('value)
+fig,ax=plt.subplots(figsize=(7,4))plt.boxplot(y)plt.grid(True)plt.setp(ax,xticklabels=['1st','2nd'])plt.xlabel('data set')plt.ylabel('value')plt.title('boxplot')
+line=plt.plot(data,'r')plt.setp(line,linestyle='-')
+line=plt.plot(y,'r')plt.setp(line,linestyle='-')
