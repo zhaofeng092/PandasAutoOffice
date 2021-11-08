@@ -44,6 +44,7 @@ Python知识星球👉[点击直达](https://t.zsxq.com/I2fIiMf)
 | [Python金融方向的学习路线是什么？](http://mp.weixin.qq.com/s?__biz=MzUzNTc5NjA4NQ==&mid=2247492140&idx=1&sn=89c7be49ce60a60b952c02ffb61cdcac&chksm=fa82a236cdf52b20b78f4550f7b77ae2b6da10c660caa41aa0346abc2cd2156677a93f39638b&token=374586993&lang=zh_CN#rd) | Python金融的学习计划+配套资料           |                                                              |
 | [*合集* Python与自动化办公的完美结合（Excel、Word、PDF、PPT、机器人、数据可视化，等）](http://mp.weixin.qq.com/s?__biz=MzUzNTc5NjA4NQ==&mid=2247490863&idx=1&sn=341901179584b4ef541b683792ef8e4a&chksm=fa815d35cdf6d42305a6ea60b1144d08f7a19ef305ad66068b1c09bec065875e5503c8c5cc19#rd) | 资源汇总                                |                                                              |
 | 🌱[Python入门教程 · 23讲（完结 · 附学习群）](https://www.bilibili.com/video/BV17p4y1i7Vn) | 入门课程，不说废话                      |                                                              |
+| [详细！Python爬虫学习计划（适合0基](https://www.bilibili.com/video/BV15K411c7SZ?spm_id_from=333.999.0.0) | 教你怎么学                              | [*小白*如何学习爬虫，可以达到实战的水平？](http://mp.weixin.qq.com/s?__biz=MzUzNTc5NjA4NQ==&mid=2247490721&idx=2&sn=9340f6cc82562c7dd373df9ebd0b037e&chksm=fa815cbbcdf6d5ada99c6a80cb1758275f81d7175436b52f1df41b33c4e4a3637598848f4f56#rd) |
 
 
 
