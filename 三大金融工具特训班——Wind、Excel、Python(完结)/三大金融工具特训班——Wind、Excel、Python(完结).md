@@ -17,11 +17,12 @@
 
   - 链接：https://pan.baidu.com/s/1j_9dqVZNu104dR9FAiHQMQ 
   - 提取码：5ht9 
-  - Wind ` 所有版本的安装包 ：[https://mp.weixin.qq.com/s/_pYKY9Ay3TC2Tl7VJzKzmQ](https://mp.weixin.qq.com/s/_pYKY9Ay3TC2Tl7VJzKzmQ)
+  - 点击获取，你懂的：[Wind ` 所有版本的安装包 ](https://mp.weixin.qq.com/s/_pYKY9Ay3TC2Tl7VJzKzmQ)
+
+
+------
+
   - 🚸学习Python过程中有任何问题，欢迎加入我的学习交流群👉 [进群](https://mp.weixin.qq.com/s/wx-JkgOUoJhb-7ZESxl93w) 👈
-
-  
-
   - [106本Python电子书](https://mp.weixin.qq.com/s/Wa27Or7SaChF5rCw7LLdVg)
   - 更多🔥[Python入门教程 · 合集](https://gitee.com/zhaofeng092/python_auto_office/blob/master/%E5%85%B3%E9%94%AE%E8%AF%8D/%E7%BE%A4%E8%81%8A/%E6%9C%80%E6%96%B0%E6%95%99%E7%A8%8B/%E5%85%A5%E9%97%A8.md)
 
