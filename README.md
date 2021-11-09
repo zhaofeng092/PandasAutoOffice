@@ -14,7 +14,7 @@
 
 有任何问题，请加入Python学习群，和我交流~❤[交流群](https://mp.weixin.qq.com/s/wx-JkgOUoJhb-7ZESxl93w)
 
-也期待加我好友，我们深入沟通，我的微信：hdylw1024
+也期待加我好友，我们深入沟通，我的微信：[hdylw1024](https://gitee.com/zhaofeng092/python_auto_office/blob/master/%E8%B4%A6%E5%8F%B7%E5%85%B1%E7%94%A8%E8%B5%84%E6%BA%90/image/%E6%88%91%E7%9A%84%E5%BE%AE%E4%BF%A1.jpg)
 
 Python知识星球👉[点击直达](https://t.zsxq.com/I2fIiMf)
 
