@@ -17,6 +17,7 @@
 
   - 链接：https://pan.baidu.com/s/1j_9dqVZNu104dR9FAiHQMQ 
   - 提取码：5ht9 
+  - Wind ` 所有版本的安装包 ：[https://mp.weixin.qq.com/s/_pYKY9Ay3TC2Tl7VJzKzmQ](https://mp.weixin.qq.com/s/_pYKY9Ay3TC2Tl7VJzKzmQ)
   - 🚸学习Python过程中有任何问题，欢迎加入我的学习交流群👉 [进群](https://mp.weixin.qq.com/s/wx-JkgOUoJhb-7ZESxl93w) 👈
 
   
